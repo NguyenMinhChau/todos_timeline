@@ -1,0 +1,108 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app-h1{
+  color: transparent;
+  background-image: linear-gradient(to right, rgb(255, 68, 68), rgb(65, 65, 255));
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.contains-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 90vw;
+}
+.btn{
+  display: flex;
+}
+button{
+  background-color: blue;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  margin: 12px 0;
+  margin-right: auto;
+}
+button:hover{
+  opacity: 0.8;
+}
+
+.strick{
+  text-decoration: line-through;
+  opacity: 0.2;
+  position: relative;
+  margin: 8px;
+  width: 100%;
+  text-align: left;
+  border-radius: 5px;
+  padding: 10px;
+}
+.nostrick{
+  position: relative;
+  margin: 8px;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px;
+}
+.form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form .input{
+  height: 27px;
+  margin-right: auto;
+  margin-left: 10px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px;
+}
+.btn_complete{
+  background: red;
+}
+.btn_Accomplished{
+  background: green;
+}
