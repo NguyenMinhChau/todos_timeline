@@ -14,7 +14,7 @@ const ToDoList = ({toDoList, handleToggle, handleFilter, handleDelete}) => {
                     toDoList.map(todo => {
                         return (
                             <ToDo key={todo.id} todo={todo} handleToggle={handleToggle} 
-                            handleFilter={handleFilter} handleDelete={handleDelete}/>
+                            handleDelete={handleDelete}/>
                         )
                     })
                 }

@@ -69,7 +69,6 @@ button:hover{
 }
 
 .strick{
-  text-decoration: line-through;
   opacity: 0.2;
   position: relative;
   margin: 8px;
@@ -101,8 +100,14 @@ button:hover{
   padding: 5px;
 }
 .btn_complete{
-  background: red;
+  background: rgb(22, 133, 22);
 }
 .btn_Accomplished{
-  background: green;
+  background: rgb(36, 36, 255);
+}
+.btn_del_complete{
+  background: rgb(255, 55, 55);
+}
+.btn_del_Accomplished{
+  display: none;
 }
