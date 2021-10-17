@@ -59,6 +59,7 @@ button{
   border-radius: 5px;
   margin: 12px 0;
   margin-right: auto;
+  min-width: 100px;
 }
 button:hover{
   opacity: 0.8;
@@ -73,6 +74,16 @@ button:hover{
   border-radius: 5px;
   padding: 10px;
 }
+.strickDate{
+  opacity: 0.2;
+  position: relative;
+  margin: 8px;
+  width: 100%;
+  text-align: left;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: red;
+}
 .nostrick{
   position: relative;
   margin: 8px;
@@ -84,16 +95,26 @@ button:hover{
 }
 .form{
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
-.form .input{
+
+.form-group{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.form-group .input{
   height: 27px;
   margin-right: auto;
   margin-left: 10px;
-  width: 100%;
+  width: 90%;
   border-radius: 5px;
   padding: 5px;
+}
+.form-group label{
+  min-width: 10%;
+  font-size: 15px;
+  line-height: 27px;
 }
 .btn_complete{
   background: rgb(22, 133, 22);
@@ -104,6 +125,10 @@ button:hover{
 .btn_del_complete{
   background: rgb(255, 55, 55);
 }
-.btn_del_Accomplished{
+.btn_update_complete{
+  background-color: rgb(255, 153, 0);
+}
+.btn_del_Accomplished,
+.btn_update_Accomplished{
   display: none;
 }

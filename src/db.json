@@ -4,27 +4,27 @@
     "id": 1,
     "task": "Give dog a bath",
     "complete": true,
-    "dateOf": "2021-09-15"
+    "dateOf": "2021-10-17T11:15"
   }, {
     "id": 2,
     "task": "Do laundry",
     "complete": false,
-    "dateOf": "2021-10-15"
+    "dateOf": "2021-10-17T11:15"
   }, {
     "id": 3,
     "task": "Vacuum floor",
     "complete": false,
-    "dateOf": "2021-11-15"
+    "dateOf": "2021-10-17T11:15"
   }, {
     "id": 4,
     "task": "Feed cat",
     "complete": false,
-    "dateOf": "2021-12-15"
+    "dateOf": "2021-10-17T11:15"
   }, {
     "id": 5,
     "task": "Change light bulbs",
     "complete": true,
-    "dateOf": "2021-08-15"
+    "dateOf": "2021-10-17T11:15"
   }
 ]
 }

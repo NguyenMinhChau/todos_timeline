@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable array-callback-return */
 /* eslint-disable eqeqeq */
 import React, { useState } from "react";
@@ -7,6 +8,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; //Import CSS
 import ToDoList from "./component/TodoList";
 import ToDoForm from "./component/TodoForm";
 import storage from './util/storage'
+// import db from './db.json'
 
 function App() {
   const [toDoList, setToDoList] = useState(storage.get());
@@ -48,24 +50,23 @@ function App() {
             }]
       });
     }else{
-      alert('Chưa có nhiệm vụ nào được hoàn thành')
+      confirmAlert({
+        title: 'Thông báo',
+        message: 'Chưa có nhiệm vụ nào hoàn thành',
+        buttons: [
+            {
+            label: 'Yes',
+            onClick: () => {return;}
+            },]
+      });
     }
   };
   // Thêm công việc
-  const addTask = (userInput) => {
+  const addTask = (userInput, due) => {
     let copy = [...toDoList];
-    const day = new Date();
-    const dayCur = day.toISOString();
-    var monthDateOf = (Number(dayCur.slice(5,7)) + 1);
-    var yearDateOf = Number(dayCur.slice(0,4));
-    if(monthDateOf > 12){
-        monthDateOf = "01";
-        yearDateOf += 1;
-    }
-    const dayCurent = yearDateOf + '-' + monthDateOf + '-' + dayCur.slice(8,10);
     copy = [
       ...copy,
-      { id: toDoList.length + 1, task: userInput, complete: false, dateOf: dayCurent },
+      { id: toDoList.length + 1, task: userInput, complete: false, dateOf: due },
     ];
     setToDoList(copy);
     storage.set(copy);
@@ -75,6 +76,33 @@ function App() {
     let del = toDoList.filter(todo => todo.id != id);
     setToDoList(del);
     storage.set(del);
+  }
+  const startUpdate = (todo) => {
+    document.getElementById("task").value = todo.task;
+    document.getElementById("due").value = todo.dateOf;
+  }
+  // Chỉnh sửa task item
+  const endUpdate = (todo,id) => {
+      let task = document.getElementById("task").value;
+      let due = document.getElementById("due").value;
+      if(task && due && todo.id == id + 1){
+        let copy = [...toDoList]
+        todo.task = task;
+        todo.dateOf = due;
+        setToDoList(copy);
+        storage.set(copy);
+      }else{
+        confirmAlert({
+          title: 'Thông báo',
+          message: 'Kiểm tra lại dữ liệu (task, due and index) đã được chọn hay chưa hoặc thông tin đã điền đầy đủ hay chưa?',
+          buttons: [
+              {
+              label: 'Yes',
+              onClick: () => {return;}
+              },
+          ]
+      });
+      }
   }
   return (
     <div className="App">
@@ -87,6 +115,8 @@ function App() {
             handleToggle={handleToggle}
             handleFilter={handleFilter}
             handleDelete={handleDelete}
+            startUpdate={startUpdate}
+            endUpdate={endUpdate}
           />
         </div>
       </header>
