@@ -38,7 +38,7 @@ const ToDoList = ({toDoList,handleToggle,handleFilter,handleDelete,startUpdate,e
                 {
                     toDoList.map((todo,index) => {
                         const myClass = todo.complete ? "strick" : "nostrick" && day > todo.dateOf ? 'strickDate' : 'nostrick';
-                        const faildDate = day > todo.dateOf ? 'Trễ hạn' : '';
+                        const faildDate = todo.complete ? '' : '' || day > todo.dateOf ? 'Trễ hạn' : '';
                         const Icon = todo.complete ? <DoneIcon /> : <WorkIcon />
                         const title = todo.complete ? "Tuyệt vời, bạn đã hoàn thành 🎉" : "Sắp xong, hãy bắt đầu nào 👨‍💻";
                         const btnTitle = todo.complete ? 'Tiếp tục' : 'Hoàn thành';
