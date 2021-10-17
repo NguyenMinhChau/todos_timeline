@@ -38,6 +38,7 @@ const ToDoList = ({toDoList,handleToggle,handleFilter,handleDelete,startUpdate,e
                 {
                     toDoList.map((todo,index) => {
                         const myClass = todo.complete ? "strick" : "nostrick" && day > todo.dateOf ? 'strickDate' : 'nostrick';
+                        const faildDate = day > todo.dateOf ? 'Trễ hạn' : '';
                         const Icon = todo.complete ? <DoneIcon /> : <WorkIcon />
                         const title = todo.complete ? "Tuyệt vời, bạn đã hoàn thành 🎉" : "Sắp xong, hãy bắt đầu nào 👨‍💻";
                         const btnTitle = todo.complete ? 'Tiếp tục' : 'Hoàn thành';
@@ -51,21 +52,18 @@ const ToDoList = ({toDoList,handleToggle,handleFilter,handleDelete,startUpdate,e
                                     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
                                     date={"Hạn: " + todo.dateOf} id={String(todo.id)} icon={Icon}
                                     iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}>
-                                    <p style={{color:'blue',fontWeight:'bold',fontSize:'12px'}}>{hd}</p>
-
-                                    <button onClick={handleClick} data-id={String(todo.id)}
-                                    className={btnClass}>{btnTitle}</button>
-
-                                    <button style={{marginLeft: "5px"}} data-id={String(todo.id)} 
-                                    onClick={handleClickDelete} className={btnDelete}>Xóa</button>
-
-                                    <button style={{marginLeft: "5px"}} data-id={String(todo.id)} 
-                                    onClick={()=>endUpdate(todo,index)} className={btnUpdate}>Sửa</button>
-                                    
-                                    <h5 className="vertical-timeline-element-title">{title}</h5>
-                                    <p onClick={()=>startUpdate(todo)}>
-                                    Nhiệm vụ: {todo.task}
-                                    </p>
+                                        <p class="faild">{faildDate}</p>
+                                        <p style={{color:'blue',fontWeight:'bold',fontSize:'12px'}}>{hd}</p>
+                                        <button onClick={handleClick} data-id={String(todo.id)}
+                                        className={btnClass}>{btnTitle}</button>
+                                        <button style={{marginLeft: "5px"}} data-id={String(todo.id)} 
+                                        onClick={handleClickDelete} className={btnDelete}>Xóa</button>
+                                        <button style={{marginLeft: "5px"}} data-id={String(todo.id)} 
+                                        onClick={()=>endUpdate(todo,index)} className={btnUpdate}>Sửa</button>
+                                        <h5 className="vertical-timeline-element-title">{title}</h5>
+                                        <p onClick={()=>startUpdate(todo)}>
+                                            Nhiệm vụ: {todo.task}
+                                        </p>
                                 </VerticalTimelineElement>
                         )
                     })
