@@ -37,6 +37,27 @@
   }
 }
 
+.loading{
+  animation: toRight .3s .5s ease infinite;
+}
+@keyframes toRight {
+  0% {
+    background: linear-gradient(to right, green, yellow);
+    color: transparent;
+    animation: rainbow 10s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  100% {
+    background: linear-gradient(to right, red, blue);
+    color: transparent;
+    animation: rainbow 10s ease infinite;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+}
+
+
 .content-item{
   display: flex;
   flex-direction: column;
@@ -105,4 +126,9 @@ table th{
 }
 table tr td{
   line-height: 97px;
+}
+
+.minus,
+.plus{
+  cursor: pointer;
 }

@@ -1,7 +1,5 @@
 import React from 'react';
 import './App.css'
-// import { BrowserRouter } from 'react-router-dom';
-// import { Route, Switch } from 'react-router-dom';
 import { BrowserRouter, Routes , Route } from 'react-router-dom'
 import Cart from './components/Cart';
 import Header from './components/Header';
@@ -21,5 +19,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

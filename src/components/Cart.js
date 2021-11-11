@@ -15,11 +15,10 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
         return Number(price * tonggia).toLocaleString('en-US');
     }
     
-    
     return(
         <div className="row">
             <div className="col-md-12">
-            <table className="table table-hover table-responsive">
+            <table className="table table-hover">
                 <thead>
                     <tr>
                         <th scope="col">Delete</th>
@@ -42,9 +41,9 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
                                 </td>
                                 <td>{item.price} $</td>
                                 <td>
-                                        <span className="btn btn-danger" style={{margin:'2px'}} onClick={()=>DecreaseQuantity(key)}><i class="fas fa-minus"></i></span>
+                                        <span className="btn btn-danger minus" style={{margin:'2px'}} onClick={()=>DecreaseQuantity(key)}><i class="fas fa-minus"></i></span>
                                         <span className="btn btn-info">{item.quantity}</span>
-                                        <span className="btn btn-primary" style={{margin:'2px'}} onClick={()=>IncreaseQuantity(key)}><i class="fas fa-plus"></i></span>
+                                        <span className="btn btn-primary plus" style={{margin:'2px'}} onClick={()=>IncreaseQuantity(key)}><i class="fas fa-plus"></i></span>
                                 </td>
                                 <td>{ TotalPrice(item.price,item.quantity)} $</td>
                             </tr>

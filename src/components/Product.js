@@ -33,7 +33,7 @@ export class Product extends Component {
         }
         return(
             <div className="row">
-                <h2>Loading...!</h2>
+                <h3 className="loading">Loading...!</h3>
             </div>
         )
         
