@@ -1,5 +1,3 @@
-@import '~antd/dist/antd.css';
-
 .App {
   text-align: center;
   background-color: #3f4653;
@@ -68,11 +66,9 @@
   padding: 8px 12px;
   border-radius: 3px;
 }
-
 .btn-item-quanti{
   cursor: text;
 }
-
 .title{
   display: -webkit-box;
   -webkit-line-clamp: 2;
