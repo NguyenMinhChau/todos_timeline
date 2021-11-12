@@ -3,6 +3,8 @@ import React from 'react'
 import { connect } from "react-redux";
 import {IncreaseQuantity,DecreaseQuantity,DeleteCart} from '../actions';
 import '../App.css';
+import { Empty, Button } from 'antd';
+
 
 function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
     let ListCart = [];
@@ -18,14 +20,14 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
     return(
         <div className="row">
             <div className="col-md-12">
-            <table className="table table-hover">
+            <table className="table">
                 <thead>
                     <tr>
-                        <th scope="col">Delete</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Total Price</th>
+                        <th scope="col">Xóa</th>
+                        <th scope="col">Hình ảnh</th>
+                        <th scope="col">Giá</th>
+                        <th scope="col">Số lượng</th>
+                        <th scope="col">Tổng</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,9 +43,9 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
                                 </td>
                                 <td>{item.price} $</td>
                                 <td>
-                                        <span className="btn btn-danger minus" style={{margin:'2px'}} onClick={()=>DecreaseQuantity(key)}><i class="fas fa-minus"></i></span>
-                                        <span className="btn btn-info">{item.quantity}</span>
-                                        <span className="btn btn-primary plus" style={{margin:'2px'}} onClick={()=>IncreaseQuantity(key)}><i class="fas fa-plus"></i></span>
+                                        <Button type="danger" ghost style={{margin:'2px'}} onClick={()=>DecreaseQuantity(key)}>-</Button>
+                                        <Button type="info">{item.quantity}</Button>
+                                        <Button type="primary" ghost style={{margin:'2px'}} onClick={()=>IncreaseQuantity(key)}>+</Button>
                                 </td>
                                 <td>{ TotalPrice(item.price,item.quantity)} $</td>
                             </tr>
@@ -51,10 +53,20 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
                     })
                         
                 }
+                {Number(TotalCart) > 0 ? 
                 <tr>
-                    <td colSpan="4">Total Carts</td>
+                    <td colSpan="4">Tổng thanh toán</td>
                     <td>{Number(TotalCart).toLocaleString('en-US')} $</td>
+                </tr> : 
+                <tr>
+                    <td colSpan="6">
+                        <Empty image="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg" imageStyle={{height: 60}} 
+                        description={<span>Không có sản phẩm nào</span>}>
+                            <a href="/" class="btn btn-primary">Mua sắm ngay</a>
+                        </Empty>
+                    </td>
                 </tr>
+                }
                 </tbody>
             </table>
             </div>

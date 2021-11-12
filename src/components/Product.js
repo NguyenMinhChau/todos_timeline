@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 import {actFetchProductsRequest,AddCart} from '../actions'
 import {connect} from 'react-redux';
+import { LoadingOutlined } from '@ant-design/icons';
 export class Product extends Component {
     constructor(props) {
         super(props)
@@ -12,7 +13,7 @@ export class Product extends Component {
     }
     render() {
         const {_products} = this.props._products;
-        if(_products.length>0){
+        if(_products.length > 0){
             return (
                 <div className="row" style={{marginTop:'10px'}}>
                     <div className="col-md-12">
@@ -22,7 +23,7 @@ export class Product extends Component {
                                     <div key={index} className="col-md-2 content-item" title={item.description}>
                                         <img src={item.image} className="img-resposive img-item" style={{width:'100%',height:'100px'}}/>
                                         <h5 className="title">{item.title}</h5>
-                                        <button className="btn btn-primary btn-item" onClick={()=>this.props.AddCart(item)}>Add Cart</button>
+                                        <button className="btn btn-primary btn-item" onClick={()=>this.props.AddCart(item)}><i class="fas fa-cart-plus"></i> Thêm vào giỏ</button>
                                     </div>
                                 ))
                             }
@@ -32,8 +33,8 @@ export class Product extends Component {
             ) 
         }
         return(
-            <div className="row">
-                <h3 className="loading">Loading...!</h3>
+            <div>
+                <h4 className="loading">Đang tải dữ liệu. Vui lòng đợi <LoadingOutlined /></h4>
             </div>
         )
         
