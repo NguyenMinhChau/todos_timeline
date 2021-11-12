@@ -3,8 +3,6 @@ import React from 'react'
 import { connect } from "react-redux";
 import {IncreaseQuantity,DecreaseQuantity,DeleteCart} from '../actions';
 import '../App.css';
-import { Empty, Button } from 'antd';
-
 
 function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
     let ListCart = [];
@@ -43,9 +41,9 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
                                 </td>
                                 <td>{item.price} $</td>
                                 <td>
-                                        <Button type="danger" ghost style={{margin:'2px'}} onClick={()=>DecreaseQuantity(key)}>-</Button>
-                                        <Button type="info">{item.quantity}</Button>
-                                        <Button type="primary" ghost style={{margin:'2px'}} onClick={()=>IncreaseQuantity(key)}>+</Button>
+                                        <span className="btn-item btn-danger" style={{margin:'2px'}} onClick={()=>DecreaseQuantity(key)}><i class="fas fa-minus"></i></span>
+                                        <span className="btn-info btn-item btn-item-quanti">{item.quantity}</span>
+                                        <span className="btn-item btn-primary" style={{margin:'2px'}} onClick={()=>IncreaseQuantity(key)}><i class="fas fa-plus"></i></span>
                                 </td>
                                 <td>{ TotalPrice(item.price,item.quantity)} $</td>
                             </tr>
@@ -59,12 +57,7 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
                     <td>{Number(TotalCart).toLocaleString('en-US')} $</td>
                 </tr> : 
                 <tr>
-                    <td colSpan="6">
-                        <Empty image="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg" imageStyle={{height: 60}} 
-                        description={<span>Không có sản phẩm nào</span>}>
-                            <a href="/" class="btn btn-primary">Mua sắm ngay</a>
-                        </Empty>
-                    </td>
+                    <td colSpan="6">Không có sản phẩm nào. <a href="/">Mua sắm ngay</a></td>
                 </tr>
                 }
                 </tbody>
