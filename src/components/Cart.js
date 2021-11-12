@@ -17,8 +17,8 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
     
     return(
         <div className="row">
-            <div className="col-md-12">
-            <table className="table table-striped table-responsive-xl">
+            <div className="col-12 table-responsive">
+            <table className="table">
                 <thead>
                     <tr>
                         <th scope="col">Xóa</th>

@@ -100,6 +100,10 @@ table{
   border-radius: 8px;
 }
 
+table tbody{
+  width: 100% !important;  ;
+}
+
 table th{
   text-align: center !important;
 }
