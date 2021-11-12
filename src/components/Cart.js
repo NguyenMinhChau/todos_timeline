@@ -19,15 +19,18 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
         <div className="row">
             <div className="col-12 table-responsive">
             <table className="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Xóa</th>
-                        <th scope="col">Hình ảnh</th>
-                        <th scope="col">Giá</th>
-                        <th scope="col">Số lượng</th>
-                        <th scope="col">Tổng</th>
-                    </tr>
-                </thead>
+                {(Number(TotalCart) > 0 ? 
+                    <thead>
+                        <tr>
+                            <th scope="col">Xóa</th>
+                            <th scope="col">Hình ảnh</th>
+                            <th scope="col">Giá</th>
+                            <th scope="col">Số lượng</th>
+                            <th scope="col">Tổng</th>
+                        </tr>
+                    </thead> 
+                :
+                '')}
                 <tbody>
                 {
                     ListCart.map((item,key)=>{
@@ -49,7 +52,6 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
                             </tr>
                         )
                     })
-                        
                 }
                 {Number(TotalCart) > 0 ? 
                 <tr>
