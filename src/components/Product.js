@@ -40,7 +40,6 @@ export class Product extends Component {
         
     }
 }
-
 const mapStateToProps = state =>{
     return {
         _products: state._todoProduct,

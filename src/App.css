@@ -73,11 +73,9 @@
   margin-top: 15px;
   text-transform: capitalize;
 }
-
 .link-item{
   font-weight: 600;
 }
-
 .delete-item i {
   padding: 12px;
   cursor: pointer;
@@ -87,23 +85,19 @@
 .delete-item i:hover{
   opacity: 0.7;
 }
-
 table{
   background-color: #fff;
   border-radius: 8px;
 }
-
 table tbody{
   width: 100% !important;  ;
 }
-
 table th{
   text-align: center !important;
 }
 table tr td{
   line-height: 97px;
 }
-
 .minus,
 .plus{
   cursor: pointer;
