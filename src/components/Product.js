@@ -3,7 +3,7 @@
 import React, { Component } from 'react'
 import {actFetchProductsRequest,AddCart} from '../actions'
 import {connect} from 'react-redux';
-import {SyncOutlined} from '@ant-design/icons';
+import CircularProgress from '@mui/material/CircularProgress';
 export class Product extends Component {
     constructor(props) {
         super(props)
@@ -34,7 +34,7 @@ export class Product extends Component {
         }
         return(
             <div>
-                <h4 className="loading">Đang tải dữ liệu. Vui lòng đợi! <SyncOutlined spin style={{color: 'white'}} /></h4>
+                <h4 className="loading"><CircularProgress disableShrink color="success"/></h4>
             </div>
         )
         

@@ -9,6 +9,7 @@
   width: 100%;
   text-align: center;
 }
+
 @keyframes toRight {
   100% {
     background: linear-gradient(to right, rgb(0, 255, 0), red);
