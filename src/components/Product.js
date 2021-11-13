@@ -34,7 +34,9 @@ export class Product extends Component {
         }
         return(
             <div>
-                <h4 className="loading"><CircularProgress disableShrink color="success"/></h4>
+                <h4 className="loading">
+                    <CircularProgress color="success"/>
+                </h4>
             </div>
         )
         
