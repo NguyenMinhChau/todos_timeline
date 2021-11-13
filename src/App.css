@@ -1,15 +1,14 @@
+@import '~antd/dist/antd.css';
 .App {
   text-align: center;
   background-color: #3f4653;
   min-height: 100vh;
 }
-
 .loading{
   animation: toRight .5s ease infinite;
   width: 100%;
   text-align: center;
 }
-
 @keyframes toRight {
   100% {
     background: linear-gradient(to right, rgb(0, 255, 0), red);
@@ -18,11 +17,9 @@
     -webkit-background-clip: text;
   }
 }
-
 .nav-item .nav-link{
   color: #fff;
 }
-
 .content-item{
   display: flex;
   flex-direction: column;
@@ -37,11 +34,9 @@
   transition: all .3s linear;
   background-color: #fff;
 }
-
 .content-item:hover{
   transform: translateY(-4px);
 }
-
 .img-item{
   transition: all .3s linear;
   background-size: cover;
@@ -49,11 +44,9 @@
   background-repeat: no-repeat;
   object-fit: contain;
 }
-
 .content-item:hover .img-item{
   transform: scale(0.8);
 }
-
 .item-cart{
   width:100px;
   height:80px
