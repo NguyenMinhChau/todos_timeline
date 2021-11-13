@@ -48,9 +48,6 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
                                         <Button type="danger" style={{margin:'2px'}} onClick={()=>DecreaseQuantity(key)}>-</Button>
                                         <Button className="btn-item-quanti" type="default">{item.quantity}</Button>
                                         <Button type="primary" style={{margin:'2px'}} onClick={()=>IncreaseQuantity(key)}>+</Button>
-                                        {/* <span className="btn-item btn-danger" style={{margin:'2px'}} onClick={()=>DecreaseQuantity(key)}><i class="fas fa-minus"></i></span>
-                                        <span className="btn-info btn-item btn-item-quanti">{item.quantity}</span>
-                                        <span className="btn-item btn-primary" style={{margin:'2px'}} onClick={()=>IncreaseQuantity(key)}><i class="fas fa-plus"></i></span> */}
                                 </td>
                                 <td>{ TotalPrice(item.price,item.quantity)} $</td>
                             </tr>
