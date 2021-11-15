@@ -3,7 +3,7 @@ import React from 'react'
 import { connect } from "react-redux";
 import {IncreaseQuantity,DecreaseQuantity,DeleteCart} from '../actions';
 import '../App.css';
-import { Button } from 'antd';
+import { Empty, Button } from 'antd';
 
 function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
     let ListCart = [];
@@ -60,7 +60,14 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
                     <td>{Number(TotalCart).toLocaleString('en-US')} $</td>
                 </tr> : 
                 <tr>
-                    <td colSpan="6">Không có sản phẩm nào. <a href="/">Mua sắm ngay</a></td>
+                    <td colSpan="6">
+                        <Empty image="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg" imageStyle={{height: 60,}} description={
+                            <span>
+                                Không có sản phẩm nào. <a href="/">Mua sắm ngay</a>
+                            </span>
+                            }>
+                        </Empty>
+                    </td>
                 </tr>
                 }
                 </tbody>
