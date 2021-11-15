@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 import {actFetchProductsRequest,AddCart} from '../actions'
 import {connect} from 'react-redux';
+import CircularProgress from '@mui/material/CircularProgress';
 export class Product extends Component {
     constructor(props) {
         super(props)
