@@ -3,7 +3,6 @@ import React from 'react'
 import { connect } from "react-redux";
 import {IncreaseQuantity,DecreaseQuantity,DeleteCart} from '../actions';
 import '../App.css';
-import { Empty, Button } from 'antd';
 
 function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
     let ListCart = [];
@@ -45,9 +44,9 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
                                 </td>
                                 <td>{item.price} $</td>
                                 <td>
-                                        <Button type="danger" style={{margin:'2px'}} onClick={()=>DecreaseQuantity(key)}>-</Button>
-                                        <Button className="btn-item-quanti" type="default">{item.quantity}</Button>
-                                        <Button type="primary" style={{margin:'2px'}} onClick={()=>IncreaseQuantity(key)}>+</Button>
+                                        <span className="btn btn-danger minus" style={{margin:'2px'}} onClick={()=>DecreaseQuantity(key)}>-</span>
+                                        <span className=" btn btn-default">{item.quantity}</span>
+                                        <span className=" btn btn-primary plus"style={{margin:'2px'}} onClick={()=>IncreaseQuantity(key)}>+</span>
                                 </td>
                                 <td>{ TotalPrice(item.price,item.quantity)} $</td>
                             </tr>
@@ -55,20 +54,17 @@ function Cart({items,IncreaseQuantity,DecreaseQuantity,DeleteCart}){
                     })
                 }
                 {Number(TotalCart) > 0 ? 
-                <tr>
-                    <td colSpan="4">Tổng thanh toán</td>
-                    <td>{Number(TotalCart).toLocaleString('en-US')} $</td>
-                </tr> : 
-                <tr>
-                    <td colSpan="6">
-                        <Empty image="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg" imageStyle={{height: 60,}} description={
-                            <span>
-                                Không có sản phẩm nào. <a href="/">Mua sắm ngay</a>
-                            </span>
-                            }>
-                        </Empty>
-                    </td>
-                </tr>
+                    <tr>
+                        <td colSpan="4">Tổng thanh toán</td>
+                        <td>{Number(TotalCart).toLocaleString('en-US')} $</td>
+                    </tr> : 
+                    <tr>
+                        <td colSpan="6">
+                        <span>
+                            Không có sản phẩm nào. <a href="/">Mua sắm ngay</a>
+                        </span>
+                        </td>
+                    </tr>
                 }
                 </tbody>
             </table>

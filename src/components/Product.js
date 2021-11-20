@@ -3,7 +3,6 @@
 import React, { Component } from 'react'
 import {actFetchProductsRequest,AddCart} from '../actions'
 import {connect} from 'react-redux';
-import { Spin, Space } from 'antd';
 export class Product extends Component {
     constructor(props) {
         super(props)
@@ -35,9 +34,7 @@ export class Product extends Component {
         return(
             <div>
                 <h4 className="loading">
-                <Space size="middle">
-                    <Spin size="large" />
-                </Space>
+                    <span class="loader"></span>
                 </h4>
             </div>
         )
