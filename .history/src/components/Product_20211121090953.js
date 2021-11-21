@@ -34,7 +34,7 @@ export class Product extends Component {
         return(
             <div>
                 <h4 className="loading">
-                    <span className="loader"></span>
+                    <span classNam="loader"></span>
                 </h4>
             </div>
         )

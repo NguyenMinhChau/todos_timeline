@@ -8,10 +8,10 @@ export class Header extends Component {
     render() {
         let ListCart = [];
         let TotalCart=0;
-        let Carts = this.props.items.Carts
-        Object.keys(Carts).forEach(function(item){
-            TotalCart+=Carts[item].quantity * Carts[item].price;
-            ListCart.push(Carts[item]);
+        let this.props.items = [];
+        Object.keys(this.props.items.Carts).forEach(function(item){
+            TotalCart+=this.props.items.Carts[item].quantity * this.props.items.Carts[item].price;
+            ListCart.push(this.props.items.Carts[item]);
         });
         return (
             <div className="row">
@@ -19,7 +19,8 @@ export class Header extends Component {
                     <nav className="navbar  navbar-dark bg-dark">
                             <ul className="nav">
                                 <li className="nav-item" ><Link to="/" className="nav-link active link-item"><i class="fab fa-react"></i> Sản Phẩm</Link></li>
-                                <li className="nav-item"><Link to="/carts" className="nav-link link-item"><i class="fas fa-shopping-cart"></i> Giỏ Hàng : {this.props.numberCart} - {Number(TotalCart).toLocaleString('en-US')}$</Link></li>
+                                <li className="nav-item"><Link to="/carts" className="nav-link link-item"><i class="fas fa-shopping-cart"></i> Giỏ Hàng : {this.props.numberCart} - 
+                                {Number(TotalCart).toLocaleString('en-US')}</Link></li>
                             </ul>
                     </nav>
                 </div>
