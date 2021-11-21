@@ -1,3 +1,4 @@
+/* eslint-disable no-self-compare */
 /* eslint-disable no-unused-vars */
 /* eslint-disable array-callback-return */
 /* eslint-disable eqeqeq */
@@ -8,7 +9,6 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; //Import CSS
 import ToDoList from "./component/TodoList";
 import ToDoForm from "./component/TodoForm";
 import storage from './util/storage'
-// import db from './db.json'
 
 function App() {
   const [toDoList, setToDoList] = useState(storage.get());
@@ -64,9 +64,10 @@ function App() {
   // Thêm công việc
   const addTask = (userInput, due) => {
     let copy = [...toDoList];
+    let maxId = Math.max(...copy.map((task) => task.id));
     copy = [
       ...copy,
-      { id: toDoList.length + 1, task: userInput, complete: false, dateOf: due },
+      { id: maxId + 1, task: userInput, complete: false, dateOf: due },
     ];
     setToDoList(copy);
     storage.set(copy);
@@ -85,7 +86,7 @@ function App() {
   const endUpdate = (todo,id) => {
       let task = document.getElementById("task").value;
       let due = document.getElementById("due").value;
-      if(task && due && todo.id == id + 1){
+      if(task && due && todo.id == todo.id){
         let copy = [...toDoList]
         todo.task = task;
         todo.dateOf = due;
