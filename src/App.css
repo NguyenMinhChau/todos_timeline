@@ -3,6 +3,17 @@
   background-color: #3f4653;
   min-height: 100vh;
 }
+.mw-91{
+  width: 91%;
+}
+.mw-91 tr td{
+  line-height: 10px !important;
+}
+@media (max-width: 46.25em) {
+  .mw-91{
+    width: 100%;
+  }
+}
 .loading{
   animation: toRight .5s ease infinite;
   width: 100%;

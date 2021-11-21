@@ -16,6 +16,34 @@ export class Product extends Component {
             return (
                 <div className="row" style={{marginTop:'10px'}}>
                     <div className="col-md-12">
+                    <table className="table mw-91">
+                        <thead>
+                            <tr>
+                                <th>Họ và tên</th>
+                                <th>Mã số sinh viên</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Nguyễn Minh Châu</td>
+                                <td>4501104023</td>
+                            </tr>
+                            <tr>
+                                <td>Nguyễn Tuyết Ngân</td>
+                                <td>4501104154</td>
+                            </tr>
+                            <tr>
+                                <td>Nguyễn Duy Phúc</td>
+                                <td>4501104179</td>
+                            </tr>
+                            <tr>
+                                <td>Võ Thị Trúc Phương</td>
+                                <td>4501104185</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    <div className="col-md-12">
                         <div className="row">
                             {
                                 _products.map((item,index)=>(
